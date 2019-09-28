@@ -79,7 +79,7 @@ def knapsack_solution(items, capacity):
             wi = items[i]
             # If the current item weight is lower than the current capacity column, item i can be part of the solution
             if wi <= w:
-                # K[i - 1][w - wi] + wi = The weight we can obtain by including the current item
+                # K[i - 1][w - wi] + wi = The weight we can obtain by including the current item, copy from the previous item with the index of how much capacity is left
                 # K[i - 1][w] = The weight we can obtain by not including the current item, copy the value straight above this one, previous row but same capacity column
                 K[i][w] = max([K[i - 1][w - wi] + wi, K[i - 1][w]])
             # Item i cannot be part of the solution
