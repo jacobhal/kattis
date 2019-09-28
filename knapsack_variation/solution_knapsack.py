@@ -77,7 +77,6 @@ def knapsack_solution(items, capacity):
         for w in range(1, W + 1):
             # Get the weight of the current item row
             wi = items[i]
-            print(wi)
             # If the current item weight is lower than the current capacity column, item i can be part of the solution
             if wi <= w:
                 # K[i - 1][w - wi] + wi = The weight we can obtain by including the current item
@@ -87,8 +86,8 @@ def knapsack_solution(items, capacity):
             else:
                 # Set the maximum weight with the current item included to the maximum weight that we can obtain without it
                 K[i][w] = K[i - 1][w]
-            print(K[i][w])
 
+    # Return the last cell in the matrix (the maximum weight)
     return [capacity*2 - K[n - 1][W], K[n - 1][W]]
 
 
